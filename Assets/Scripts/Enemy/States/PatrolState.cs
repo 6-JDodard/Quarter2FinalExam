@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PatrolState : BaseState
 {
+//tracks which waypoint it's targeting.
 public int waypointIndex;
     public override void Enter()
     {
