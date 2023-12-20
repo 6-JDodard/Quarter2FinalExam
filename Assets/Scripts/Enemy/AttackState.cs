@@ -7,7 +7,7 @@ public class AttackState : BaseState
     private float moveTimer;
     private float losePlayerTimer;
     private float shotTimer;
-    enemy.transform.LookAt(enemy.Player.transform);
+    
     public override void Enter()
     {
 
@@ -24,8 +24,9 @@ public class AttackState : BaseState
         {
             losePlayerTimer = 0;
             moveTimer += Time.deltaTime;
-            shotTimer += moveTimer.deltaTime;
-            if (shotTimer . enemy.fireRate)
+            shotTimer += Time.deltaTime;
+            enemy.transform.LookAt(enemy.Player.transform);
+            if (shotTimer > enemy.fireRate)
             {
                 Shoot();
             }
